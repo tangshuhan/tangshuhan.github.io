@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        /* * {
+            outline: 1px solid red
+        } */
+
+        body {
+            width: 100%;
+            padding: 80px 0px 0px 0px;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            background-color: white;
+            opacity: .8;
+            padding: 0px 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* margin: auto; */
+        }
+
+        .header .logo {
+            display: inline-block;
+            padding: 30px;
+        }
+
+        .header nav {
+            padding: 14px;
+            text-align: center;
+            width: 100%;
+            font-size: 0;
+        }
+
+        .header nav a {
+            font-size: 16px;
+            color: #1e1e1e;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 50px;
+            font-weight: bolder;
+            padding: 0 40px;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .h3 {
+            margin-top: 40px;
+            font-size: 70px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .p1 {
+            color: #616161;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .mainTitleArea {
+            margin-bottom: 50px;
+        }
+
+        .service {
+            width: 1200px;
+            margin: auto;
+            /* box-sizing: border-box; */
+            display: flex;
+        }
+
+        .service .info {
+            display: flex;
+        }
+
+        .service .linetoday {
+            width: 50%;
+        }
+        .title{
+            width: 960px;
+            margin: auto;
+            vertical-align: baseline;
+            
+        }
+        .title h3{
+            text-align: center;
+            font-size: 70px;
+            font-weight:bold;
+            font-family: sans-serif;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .banner2 img{
+            width: 100%;
+            padding: 50px 0px 40px 0px;
+        }
+        .title .about{
+            text-align: center;
+            font-size: 20px;
+            color:gray;
+            font-weight:500;
+            margin-bottom: 150px;
+        }
+        .container {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .MessengerAPP {
+            width: 350px;
+            margin: auto;
+            border: 2px solid none;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .img-t {
+            width: 100%;
+            padding-bottom: 30px;
+        }
+
+        .onlyPc {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .onlySp {
+            font-size: 15px;
+            color: gray;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .footer {
+            width: 1200px;
+            padding: 40px;
+            padding-bottom: 60px;
+
+        }
+
+        .under {
+            width: 960px;
+            margin-left: 120px;
+        }
+
+        .under a {
+            text-decoration: none;
+            padding: 0px 0px 0px 20px;
+            color: #000;
+        }
+
+        .under a::before {
+            content: '|';
+            color: #aaa;
+            padding: 0px 20px 0px 0px;
+        }
+
+        .line1 {
+            width: 1200px;
+            height: 1px;
+            background-color: #ccc;
+            margin: auto;
+        }
+        .under1 a {
+            text-decoration: none;
+            padding: 0px 0px 0px 20px;
+            color: #000;
+            margin: auto;
+        }
+        .under1 {
+            width: 960px;
+            margin-left: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo"><img src="./line official/icon-title-pc.png" alt=""></a>
+        <nav>
+            <a href="#">Life on LINE</a>
+            <a href="#">通訊軟體</a>
+            <a href="#">服務總覽</a>
+        </nav>
+    </div>
+    <div class="banner">
+        <img src="./line official/mv01.jpg" alt="">
+    </div>
+    <div class="mainTitleArea">
+        <h3 class="h3">Life on LINE</h3>
+        <p class="p1">超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
+    </div>
+    <section class="service">
+        <div class="info">
+            <div class="linetoday">
+                <img src="./line official/1e57676c75266e49efbd1aa768f9cd7f.png" alt="">
+                <h4>LINE TODAY</h4>
+                <h5>隨點隨看 生活快充</h5>
+                <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+                <div class="button">
+                    <button class="otherinfo">其他詳細資訊</button>
+                </div>
+            </div>
+            <div class="service picture">
+                <img src="./line official/ff4e80e4fb952a85f4e34ae102e26cac.png" alt="">
+            </div>
+        </div>
+    </section>
+    <div class="title">
+        <h3>通訊軟體</h3>
+        <p class="about">一款全新型態的通訊軟體，讓您隨時隨地享受免費傳訊、免費通話等溝通樂趣。</p>
+    </div>
+    <div class="container">
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/0d067133c3c06f520074aca8e2175ba0.png">
+            <h4 class="onlyPc">聊天、語音通話&視訊通話</h4>
+            <p class="onlySp">能夠和好友一對一或多人群組訊息聊天，或是進行語音、視訊通話。</p>
+        </div>
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/3ba4e4f273cbc6faf25705a9154d0ce6.png">
+            <h4 class="onlyPc">貼圖＆表情貼＆主題</h4>
+            <p class="onlySp">使用有趣的貼圖或表情貼豐富聊天，也能更換超讚的主題來表達自己。</p>
+        </div>
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/d9d770c0876cab6a56cdc4d308abba67.png">
+            <h4 class="onlyPc">主頁</h4>
+            <p class="onlySp">可以快速連結 LINE 的各種服務，包含貼圖等多樣的內容資訊。</p>
+        </div>
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/49fae47e154a66bfea7bfa3559e04483.png">
+            <h4 class="onlyPc">社群</h4>
+            <p class="onlySp">輕鬆分享共同興趣、開心聊出好麻吉。
+            </p>
+        </div>
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/e8184ef3c8da9a8eec9cbd127f709a96.png">
+            <h4 class="onlyPc">貼文串</h4>
+            <p class="onlySp">供你分享你的近況，或是瞭解好友的最新消息。透過「探索」功能，能找到更多你喜愛的內容。</p>
+        </div>
+        <div class="MessengerAPP">
+            <img class="img-t" src="./line official/e3ba9b4f333191f18c8d467bb6e2b46f.png">
+            <h4 class="onlyPc">錢包</h4>
+            <p class="onlySp">使用「 LINE Pay 」可以進行安全方便的行動付款或轉帳，也能使用其他金融相關服務。</p>
+        </div>
+    </div>
+    <div class="banner2">
+        <img src="./line official/359aa04b2b1c3f542b3ef32ac68889db.png">
+    </div>
+    <div class="title">
+        <h3>服務總覽</h3>
+    </div>
+    <div class="container">
+        <div class="services">
+            <img class="img-h" src="">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="under">
+                <img src="./line official/bc8f005cde5bb467dbfb5745768ecf1e.png" width="40px" alt="">
+                <a href="#">App Store</a>
+                <a href="#">Google Play</a>
+                <a href="#">Desktop</a>
+                <a href="#">Windows Store</a>
+                <a href="#">Chrome</a>
+                <a href="#">APK</a>
+                <a href="#">Screen Saver</a>
+            </div>
+        </div>
+        <div class="line1"></div>
+        <div class="footer">
+            <div class="under1">
+                <a href="#">© LINE Corporation</a>
+                <a href="#">常見問題</a>
+                <a href="#">服務條款</a>
+                <a href="#">隱私權政策</a>
+                <a href="#">註冊及移動帳號</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
