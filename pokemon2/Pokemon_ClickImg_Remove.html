@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h1>寶可夢圖鑑列表</h1>
+  </div>
+
+  <button id="click" class="btn btn-primary">Click +1</button>
+  <button id="clear" class="btn btn-danger">Clear -1</button>
+  <button id="all" class="btn btn-warning">Load All</button>
+  <button id="del" class="btn btn-dark">Reset</button>
+  <button id="timer" class="btn btn-success">Timer</button>
+  <button id="stop" class="btn btn-secondary">StopTimer</button>
+
+
+  <div id='container'></div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+
+  <script>
+    let container = document.getElementById("container");
+    window.onload = setPokemon();
+    let num = 0;
+    //網頁跑完之後立刻執行的方法
+
+    function setPokemon() {
+      let h1 = document.getElementsByTagName("h1")[0];
+      h1.innerText = "Pokemon圖鑑列表";
+      //使用TagName取得h1後,再用innerText改變h1顯示的字元
+      container.innerHTML = '';
+    }
+
+    //click+1
+    let click = document.getElementById('click');
+    click.addEventListener('click', function () {
+      let add = 1 + num++;
+      let fileName = add.toString().padStart(3, '0');
+      let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+      let img = document.createElement('img');
+      img.setAttribute('src', pathFile);
+
+      container.appendChild(img);
+    });
+    //clear-1
+
+    let clear = document.getElementById('clear');
+    clear.addEventListener('click', function () {
+      container.removeChild(container.childNodes[num--]);
+    });
+
+    //Load All
+    let all = document.getElementById('all');
+    all.addEventListener('click', function () {
+      let pokemons = '';
+      for (let i = 1; i <= 898; i++) {
+        let fileName = i.toString().padStart(3, '0');
+        let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+        let pokemonImg = `<img src = '${pathFile}'>`;
+        pokemons += pokemonImg;
+      }
+      container.innerHTML = pokemons;
+    });
+    //Reset
+    let del = document.getElementById('del');
+    del.addEventListener('click', function () {
+      setPokemon();
+    });
+
+    //Timer
+    let timerClick;
+    window.onload = function () {
+      let timer = document.getElementById('timer');
+      timer.addEventListener('click', function () {
+        timerClick = setInterval(pokemon, 1000);
+      });
+      let stop = document.getElementById('stop');
+      stop.addEventListener('click',function(){
+        clearInterval(timerClick);
+      })
+    };
+
+    function pokemon (){
+      let add = 1 + num++;
+      let fileName = add.toString().padStart(3, '0');
+      let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+      let img = document.createElement('img');
+      img.setAttribute('src', pathFile);
+
+      container.appendChild(img);
+    }
+
+  </script>
+</body>
+
+</html>
