@@ -1,0 +1,56 @@
+[
+    {
+        "firtsname": "kaku",
+        "height": 168,
+        "email": "kaku@gmail.com",
+        "city": {
+            "通訊地址": "台北市",
+            "戶籍地址": "台北市"
+        },
+        "phone": {
+            "市話": "無",
+            "行動電話": "0000000000"
+        },
+        "cars": [
+            "BMW",
+            "Nissan GT-R",
+            "Audio"
+        ]
+    },
+    {
+        "firtsname": "Mary",
+        "height": 150,
+        "email": "Marry@gmail.com",
+        "city": {
+            "通訊地址": "台北市",
+            "戶籍地址": "台北市"
+        },
+        "phone": {
+            "市話": "無",
+            "行動電話": "1111111111"
+        },
+        "cars": [
+            "BMW",
+            "Nissan GT-R",
+            "Audio"
+        ]
+    },
+    {
+        "firtsname": "Jack",
+        "height": 170,
+        "email": "Kevin@gmail.com",
+        "city": {
+            "通訊地址": "台中市",
+            "戶籍地址": "台北市"
+        },
+        "phone": {
+            "市話": "無",
+            "行動電話": "21111111"
+        },
+        "cars": [
+            "BMW",
+            "Nissan GT-R",
+            "Audio"
+        ]
+    }
+]
