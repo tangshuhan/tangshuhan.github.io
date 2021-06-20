@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <style>
+    .btn {
+      width: 150px;
+      line-height: 70px;
+      font-size: x-large;
+    }
+
+    .txt {
+      width: 610px;
+      line-height: 100px;
+      font-size: x-large;
+      text-align: right;
+    }
+
+    .ac input {
+      width: 300px;
+
+      margin: 0px 0px 0px 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="head" class="jumbotron text-light ">
+    <h1> 計算機 </h1>
+  </div>
+  <div class="container">
+
+    <input class="txt" type="text" disabled>
+
+    <div class="cal">
+      <div class="ac">
+        <input  class="btn btn-outline-success" type="button" value="AC">
+        <input  class="btn btn-outline-success" type="button" value="DEL"> <br>
+      </div>
+      <div class="num">
+
+        <input class="btn btn-outline-secondary" type="button" value="8">
+        <input class="btn btn-outline-secondary" type="button" value="9">
+        <input class="btn btn-outline-secondary" type="button" value="7">
+        <input class="btn btn-outline-secondary" type="button" value="*"><br>
+
+        <input class="btn btn-outline-secondary" type="button" value="4">
+        <input class="btn btn-outline-secondary" type="button" value="5">
+        <input class="btn btn-outline-secondary" type="button" value="6">
+        <input class="btn btn-outline-secondary" type="button" value="/"><br>
+
+        <input class="btn btn-outline-secondary" type="button" value="1">
+        <input class="btn btn-outline-secondary" type="button" value="2">
+        <input class="btn btn-outline-secondary" type="button" value="3">
+        <input class="btn btn-outline-secondary" type="button" value="-"><br>
+
+        <input class="btn btn-outline-secondary" type="button" value="0">
+        <input class="btn btn-outline-secondary" type="button" value=".">
+        <input class="btn btn-outline-secondary" type="button" value="+">
+        <input class="btn btn-outline-secondary" type="button" value="=">
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    window.onload = function () {
+      let way_res = [];
+      let btn_txt = document.getElementsByClassName('btn btn-outline-secondary');
+      let txt = document.getElementsByClassName('txt')[0];
+      let btn_way = document.getElementsByClassName('btn btn-outline-success');
+      for (let i = 0; i < btn_way.length; i++) {
+        btn_way[i].onclick = function () {
+          if (this.value == 'AC') {
+            way_res = [];
+            txt.value = "";
+          }
+          else {
+            txt.value = txt.value.substr(0, txt.value.length - 1);
+          }
+        }
+      }
+      for (let i = 0; i < btn_txt.length; i++) {
+        btn_txt[i].onclick = function () {
+          if (txt.value == "" && this.value == ".") {
+            txt.value = "0.";
+          }
+          else {
+            if (!isNaN(this.value) || this.value == ".") {
+              if (txt.value.indexOf('.') != -1) {
+                if (this.value != ".") {
+                  txt.value += this.value;
+                }
+              }
+              else {
+                txt.value += this.value;
+              }
+            }
+            else {
+              if (this.value != "=") {
+                way_res[way_res.length] = txt.value;
+                way_res[way_res.length] = this.value;
+                txt.value = "";
+              }
+              else {
+                way_res[way_res.length] = txt.value;
+                txt.value = eval(way_res.join(''));
+                way_res = [];
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
